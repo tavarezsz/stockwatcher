@@ -1,0 +1,12 @@
+.form{
+    padding: 5em;
+    align-items: center;
+}
+
+.newstock_container{
+    padding: 1em;
+}
+
+.newstock_container p{
+    margin-top: 1em;
+}
