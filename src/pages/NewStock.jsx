@@ -111,13 +111,15 @@ export default function Home() {
         {message &&  <Message type={msgType} msg={message}/>}
         {//ajeitar tudo isso dps
         }
-        <p>Essa foi a ação encontrada, deseja adiciona-la a sua carteira?</p>
-        {(stock === null)
-        ? <br/>
-         : <StockCard stock={stock} preco={stPreco}/>
+
+      
+        {(stock &&
+          <p>Essa foi a ação encontrada, deseja adiciona-la a sua carteira?</p>
+          <StockCard stock={stock} preco={stPreco}/>
+          <CustomBtn func={() => createPost(stock)} text="Adicionar"/>
         }
 
-      <CustomBtn func={() => createPost(stock)} text="Adicionar"/>
+
 
     </div>
   )
