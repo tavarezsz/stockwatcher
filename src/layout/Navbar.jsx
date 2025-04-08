@@ -10,7 +10,7 @@ function Navbar(){
             <Container>
                 <ul className={styles.list}>
                     <li className={styles.item}><Link to="/">Home</Link></li>
-                    <li className={styles.item}><Link to="/projects">Minhas ações</Link></li>
+                    <li className={styles.item}><Link to="/mystocks">Minhas ações</Link></li>
 
 
                 </ul>
