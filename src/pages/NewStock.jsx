@@ -5,7 +5,7 @@ import styles from './NewStock.module.css'
 import { useState, useEffect } from 'react'
 import StockCard from '../layout/StockCard'
 
-export default function Home() {
+export default function NewStock() {
   const [cod,setCod] = useState("")
   const [preco,setPreco] = useState(0)
   const [stock,setStock] = useState(null)
@@ -108,17 +108,19 @@ export default function Home() {
 
         </form>
         
-        {message &&  <Message type={msgType} msg={message}/>}
-        {//ajeitar tudo isso dps
+        { message &&  <Message msg={message} type={msgType}/> //não sei pq não funciona
         }
 
-      
-        {(stock &&
+        {stock != null &&
+        <>
           <p>Essa foi a ação encontrada, deseja adiciona-la a sua carteira?</p>
-          <StockCard stock={stock} preco={stPreco}/>
-          <CustomBtn func={() => createPost(stock)} text="Adicionar"/>
-        }
 
+          <StockCard stock={stock} preco={stPreco} displayIcons={false}/>
+
+          <CustomBtn func={() => createPost(stock)} text="Adicionar"/>
+        </>
+
+        }
 
 
     </div>
