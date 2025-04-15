@@ -1,0 +1,12 @@
+.form{
+    padding: 2em;
+    align-items: center;
+}
+
+.container{
+    padding: .5em;
+}
+
+.container input{
+    background-color: rgb(241, 239, 239);
+}

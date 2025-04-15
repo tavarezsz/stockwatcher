@@ -4,6 +4,7 @@ import CustomBtn from '../layout/CustomBtn'
 import styles from './NewStock.module.css'
 import { useState, useEffect } from 'react'
 import StockCard from '../layout/StockCard'
+import Message from '../layout/Message'
 
 export default function NewStock() {
   const [cod,setCod] = useState("")
@@ -12,6 +13,10 @@ export default function NewStock() {
   const [stCod,setStCod] = useState(null)
   const [stPreco,setStPreco] = useState(0)
   const [quant,setQuant] = useState(1)
+
+  const currentDate = new Date()
+
+  const datetime = `${currentDate.getDate()}/${currentDate.getMonth()+1} - ${currentDate.getHours()}:${currentDate.getMinutes()}`
 
   const [message,setMessage] = useState()
     const [msgType,setMsgType] = useState()
@@ -29,8 +34,8 @@ export default function NewStock() {
             .then((resp) => resp.json())
             .then((data) => {
                 console.log(data)
-               setMessage("A ação foi adicionada a sua carteira")
-               setMsgType("success")
+                setMessage("A ação foi adicionada a sua carteira")
+                setMsgType("success")
             })
             .catch((err) => {console.log(err)
                 setMessage("Não foi possível adicionar a ação tente novamente")
@@ -44,17 +49,26 @@ export default function NewStock() {
 
   useEffect(() => {
      if (!stCod) return
+
+     console.log(datetime)
+
  
      fetch(`https://brapi.dev/api/quote/${stCod}?token=${token}`)
        .then((res) => res.json())
        .then((data) => {
-        
+
         const newStock = {
           ...data.results[0],
           buyPrice: stPreco,
-          quantity: quant
+          quantity: quant,
+          lastUpdate: datetime
           
         }
+
+        if(newStock.buyPrice==0){
+          newStock.buyPrice = newStock.regularMarketPrice
+        }
+
 
         setStock(newStock)
       })
@@ -117,7 +131,9 @@ export default function NewStock() {
 
           <StockCard stock={stock} preco={stPreco} displayIcons={false}/>
 
-          <CustomBtn func={() => createPost(stock)} text="Adicionar"/>
+          <CustomBtn func={() => {createPost(stock)
+            setStock(null)}} text="Adicionar"/>
+          <CustomBtn func={() => window.location.reload()} text="Cancelar"/>
         </>
 
         }

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import styles from './LinkButton.module.css'
+import styles from './CustomBtn.module.css'
 
 export default function CustomBtn({func,text}) {
   return (

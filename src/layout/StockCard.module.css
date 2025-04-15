@@ -1,0 +1,44 @@
+.lucro{
+    color: green;
+}
+.perda{
+    color: red;
+}
+
+.card{
+    padding: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    border-color: black;
+    border: solid;
+    border-width: 2px;
+    position: relative;
+}
+
+.btn_container{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.icon_button{
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.icon_button:hover{
+    background-color: black;
+    color: antiquewhite;
+    transition: 0.5s;
+}
+
+.details_container{
+    padding: 1em;
+}
+
+.details_container ul{
+    padding: 1em;
+}

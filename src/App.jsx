@@ -9,6 +9,7 @@ import Container from './layout/Container'
 import Home from './pages/Home'
 import NewStock from './pages/NewStock'
 import MyStocks from './pages/MyStocks';
+import EditStock from './pages/EditStock';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
           <Route exact path='/' element={<Home/>}></Route>
           <Route exact path='/newstock' element={<NewStock/>}></Route> 
           <Route exact path='/mystocks' element={<MyStocks/>}></Route> 
+          <Route exact path='/editstock/:id' element={<EditStock/>}></Route> 
         </Routes>
 
       </Container>
