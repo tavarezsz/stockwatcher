@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const token = "jSr9d1QtV7ifskpkmA1k1c";
+
 
 const useUpdate = (uniqueStocks, stocks) => {
   const [updatedStocks, setUpdatedStocks] = useState([]);

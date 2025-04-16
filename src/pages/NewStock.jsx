@@ -45,7 +45,7 @@ export default function NewStock() {
     }
     
 
-  const token = "jSr9d1QtV7ifskpkmA1k1c"//tirar depois
+  
 
   useEffect(() => {
      if (!stCod) return
