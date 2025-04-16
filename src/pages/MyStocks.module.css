@@ -2,3 +2,7 @@
     padding: 1em;
     display: grid
 }
+
+.stock_container button{
+    margin-top: 2em;
+}

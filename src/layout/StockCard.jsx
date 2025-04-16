@@ -66,8 +66,8 @@ export default function StockCard({stock,displayIcons}) {
         <div className={styles.card}>
 
             {(variacao > 0)
-            ? <h3>{stock.longName}      <span className={styles.lucro}>+{variacao}%</span></h3>
-            : <h3>{stock.longName}      <span className={styles.perda}>{variacao}%</span></h3>
+            ? <h3>{stock.longName.slice(0,-4)}      <span className={styles.lucro}>+{variacao}%</span></h3>
+            : <h3>{stock.longName.slice(0,-4)}      <span className={styles.perda}>{variacao}%</span></h3>
             }
             
             <p>Preço de compra: {stock.buyPrice}</p>
@@ -77,23 +77,22 @@ export default function StockCard({stock,displayIcons}) {
             {displayIcons==false || (
 
               <div className={styles.btn_container}>
-              <button onClick={()=>{
-                setShowDetails(true)
-                setShowPanel(true)
-              }} className={styles.icon_button}><TiPlusOutline size={30}/></button>
+                <button onClick={()=>{
+                  setShowDetails(true)
+                  setShowPanel(true)
+                }} className={styles.icon_button}><TiPlusOutline size={30}/></button>
 
-              <button onClick={() => {
-                setShowDetails(false)
-                setShowPanel(true)
-              }} className={styles.icon_button}><TiEdit size={30}/></button>
+                <button onClick={() => {
+                  setShowDetails(false)
+                  setShowPanel(true)
+                }} className={styles.icon_button}><TiEdit size={30}/></button>
 
-              <button className={styles.icon_button} onClick={() => {
-                deleteStock(stock)
-                window.location.reload()
-              }}><TiTrash size={30}/></button>
+                <button className={styles.icon_button} onClick={() => {
+                  deleteStock(stock)
+                  window.location.reload()
+                }}><TiTrash size={30}/></button>
+
               
-
-
 
               <SidePanel show={showPanel} onClose={() => setShowPanel(false)}>
               {(showDetails) ? (
@@ -133,7 +132,11 @@ export default function StockCard({stock,displayIcons}) {
 
               
               </div>
+
+
             )}
+
+            <img className={styles.logo} src={stock.logourl} alt="" />
 
 
         </div>
