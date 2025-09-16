@@ -45,7 +45,7 @@ export default function NewStock() {
     }
     
 
-  
+  const token = "jSr9d1QtV7ifskpkmA1k1c"//uma api publica gratis, nao precisa tirar
 
   useEffect(() => {
      if (!stCod) return
