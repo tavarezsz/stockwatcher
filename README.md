@@ -6,10 +6,10 @@ O StockWatcher é uma aplicação web para monitoramento em tempo real do preço
 Este projeto esta sendo desenvolvido com React, ainda está incompleto, porém funcional
 
 
-Como Instalar e Rodar
+Como Instalar e Rodar:
 Siga os passos abaixo para ter uma cópia local do projeto rodando na sua máquina.
 
-Pré-requisitos
+Pré-requisitos:
 Certifique-se de ter o Node.js e o npm instalados.
 
 Instalação
