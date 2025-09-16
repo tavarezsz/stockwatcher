@@ -3,7 +3,7 @@ StockWatcher
 Sobre o Projeto
 O StockWatcher é uma aplicação web para monitoramento em tempo real do preço de ações. Ele permite que os usuários acompanhem as flutuações do mercado e tenham uma visão rápida sobre o desempenho de ativos específicos.
 
-Este projeto foi desenvolvido com React
+Este projeto esta sendo desenvolvido com React, ainda está incompleto, porém funcional
 
 
 Como Instalar e Rodar
